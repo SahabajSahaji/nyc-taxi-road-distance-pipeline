@@ -12,3 +12,7 @@ __pycache__/
 
 # Ignore virtual environments
 .venv/
+
+# OpenStreetMap data
+data/osm/*
+!data/osm/.gitkeep
