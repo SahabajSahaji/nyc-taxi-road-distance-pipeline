@@ -200,6 +200,30 @@ Evaluation results on the chronological test set:
 
 XGBoost achieved the best performance among the evaluated models.
 
+
+### Model Performance Visualizations
+
+**1. Actual vs Predicted Fare**
+
+![Actual vs Predicted](reports/images/actual_vs_predicted.png)
+
+**2. Feature Importance**
+
+![Feature Importance](reports/images/feature_importance.png)
+
+**3. Model Comparison - MAE**
+
+![Model Comparison MAE](reports/images/model_comparison_mae.png)
+
+**4. Model Comparison - RMSE**
+
+![Model Comparison RMSE](reports/images/model_comparison_rmse.png)
+
+**5. Model Comparison - R² Score**
+
+![Model Comparison R2](reports/images/model_comparison_r2.png)
+
+
 ### Feature Importance
 
 The most influential features according to XGBoost feature importance and permutation importance were:
