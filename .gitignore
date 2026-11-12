@@ -1,18 +1,30 @@
-# Ignore raw datasets
-data/raw/
+# Raw datasets
+data/raw/*
+!data/raw/.gitkeep
 
-# Ignore processed datasets
-data/processed/
+# Processed datasets
+data/processed/*
+!data/processed/.gitkeep
 
-# Ignore Python cache
-__pycache__/
-
-# Ignore Jupyter checkpoints
-.ipynb_checkpoints/
-
-# Ignore virtual environments
-.venv/
-
-# OpenStreetMap data
+# OpenStreetMap and OSRM files
 data/osm/*
 !data/osm/.gitkeep
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.log
+.DS_Store
