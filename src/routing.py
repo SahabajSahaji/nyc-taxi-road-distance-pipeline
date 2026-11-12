@@ -37,11 +37,15 @@ class OSRMRouter:
                 timeout=self.timeout
             )
 
-            response.raise_for_status()
+            
             data = response.json()
+            if data.get("code") == "NoRoute":
+                return None ,None ,"unroutable"
 
             if data.get("code") != "Ok" or not data.get("routes"):
-                return None, None, "unroutable"
+                return None, None, "retryable_error"
+
+            response.raise_for_status()
 
             route = data["routes"][0]
 
