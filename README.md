@@ -28,46 +28,42 @@ These features are then used to train and evaluate machine learning models for t
 
 ## Project Architecture
 
-```text
-NYC Taxi Dataset
-       |
-       v
-Data Exploration & Quality Checks
-       |
-       v
-Data Cleaning & NYC Filtering
-       |
-       v
-Haversine Distance Calculation
-       |
-       v
-Local OSRM Routing Server
-(Docker + OpenStreetMap)
-       |
-       v
-Road Distance & Duration
-       |
-       v
-SQLite Route Cache
-       |
-       v
-Feature Engineering
-       |
-       v
-Data Preparation & Imputation
-       |
-       v
-Chronological Train-Test Split
-       |
-       v
-Machine Learning Models
-       |
-       v
-Model Evaluation & Comparison
-       |
-       v
-Saved XGBoost Model
-```
+
+flowchart TD
+    A["NYC Taxi Dataset (uber.csv)"]
+    B["Data Exploration & Quality Checks"]
+    C["Data Cleaning & NYC Filtering"]
+    D["Haversine Distance Calculation"]
+    E["Local OSRM Routing Server"]
+    F["Road Distance & Duration"]
+    G[("SQLite Route Cache")]
+    H["Feature Engineering"]
+    I["Data Preparation & Imputation"]
+    J["Chronological Train-Test Split"]
+    K["ML Model Training"]
+    L["Model Evaluation"]
+    M[("Saved XGBoost Model")]
+
+    A --> B --> C --> D
+    D --> E
+    E --> F
+    F <--> G
+    F --> H
+    H --> I --> J --> K --> L --> M
+
+    subgraph Infrastructure
+        E
+        G
+    end
+
+    subgraph Machine_Learning
+        I
+        J
+        K
+        L
+        M
+    end
+
 
 ## Technologies Used
 
