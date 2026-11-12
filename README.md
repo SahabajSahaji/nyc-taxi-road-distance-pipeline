@@ -26,9 +26,10 @@ These features are then used to train and evaluate machine learning models for t
 - Model evaluation and feature importance analysis
 - Saved XGBoost model with fitted preprocessing components
 
+
 ## Project Architecture
 
-
+```mermaid
 flowchart TD
     A["NYC Taxi Dataset (uber.csv)"]
     B["Data Exploration & Quality Checks"]
@@ -63,6 +64,7 @@ flowchart TD
         L
         M
     end
+```
 
 
 ## Technologies Used
