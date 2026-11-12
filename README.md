@@ -224,6 +224,39 @@ XGBoost achieved the best performance among the evaluated models.
 ![Model Comparison R2](reports/images/model_comparison_r2.png)
 
 
+## Testing
+
+The project includes an automated test suite built with **pytest** to validate individual components and the end-to-end fare prediction pipeline.
+
+### Run Tests
+
+Activate the virtual environment and execute:
+
+```bash
+python -m pytest tests/ -v
+```
+
+### Test Coverage
+
+The test suite covers:
+
+- **Distance:** Haversine distance calculations and edge cases.
+- **Data Cleaning:** Required columns, missing values, and invalid coordinates.
+- **Routing:** OSRM responses, successful routes, and error handling.
+- **Feature Engineering:** Temporal features, distance calculations, and missing-value handling.
+- **Model:** Model loading, feature validation, and fare predictions.
+- **Pipeline:** Successful predictions, unroutable trips, and invalid input validation.
+
+### Test Results
+
+- **Total tests:** 27
+- **Passed:** 27
+- **Failed:** 0
+- **Warnings:** 0
+
+Pipeline tests use mocked OSRM and model responses, so they can run without a live OSRM server.
+
+
 ### Feature Importance
 
 The most influential features according to XGBoost feature importance and permutation importance were:
