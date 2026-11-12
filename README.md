@@ -86,6 +86,8 @@ flowchart TD
 ## Dataset
 
 The project uses an NYC taxi fare dataset named `uber.csv`.
+Link to download uber.csv file :
+[text](https://www.kaggle.com/datasets/yasserh/uber-fares-dataset/data)
 
 **Initial dataset:**
 - Rows: 200,000
