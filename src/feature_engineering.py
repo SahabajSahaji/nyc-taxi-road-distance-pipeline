@@ -98,23 +98,25 @@ def create_features(df):
 
     df["pickup_hour"] = pickup_datetime_ny.dt.hour
     df["pickup_day"] = pickup_datetime_ny.dt.day
+
     df["pickup_day_of_week"] = (
-        pickup_datetime_ny.dt.dayofweek
+        pickup_datetime_ny.dt.day_of_week
     )
+
     df["pickup_month"] = pickup_datetime_ny.dt.month
     df["pickup_year"] = pickup_datetime_ny.dt.year
 
     df["is_weekend"] = (
-        pickup_datetime_ny.dt.dayofweek >= 5
+        pickup_datetime_ny.dt.day_of_week >= 5
     ).astype(int)
 
     df["is_rush_hour"] = (
-        (pickup_datetime_ny.dt.dayofweek < 5)
+        (pickup_datetime_ny.dt.day_of_week < 5)
         & (
             pickup_datetime_ny.dt.hour.between(7, 9)
             | pickup_datetime_ny.dt.hour.between(16, 19)
         )
-    ).astype(int)
+    ).astype(int)    
 
     # 8. Geographical location clusters
     df["pickup_location_lat"] = (
